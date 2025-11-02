@@ -1,7 +1,7 @@
 {
   "name": "nestjs-pubsub-lib",
   "description": "A robust, type-safe, and production-ready Google Pub/Sub module for NestJS.",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "license": "MIT",
   "peerDependencies": {
     "@google-cloud/pubsub": "^4.9.0",
