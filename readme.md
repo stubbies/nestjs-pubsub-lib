@@ -8,8 +8,7 @@
 
 <p align="center">
   <a href="https://www.npmjs.com/package/nestjs-pubsub-lib"><img src="https://img.shields.io/npm/v/nestjs-pubsub-lib" alt="NPM Version"/></a>
-  <a href="https://www.npmjs.com/package/nestjs-pubsub-lib"><img src="https://img.shields.io/npm/l/nestjs-pubsub-lib
-" alt="Package License"/></a>
+  <a href="https://www.npmjs.com/package/nestjs-pubsub-lib"><img src="https://img.shields.io/npm/l/nestjs-pubsub-lib" alt="Package License"/></a>
 </p>
 
 A fully-featured NestJS module for Google Cloud Pub/Sub that provides a simple, declarative, and type-safe way to publish and subscribe to events. Designed with best practices in mind, it handles boilerplate, configuration, and error handling so you can focus on your business logic.
