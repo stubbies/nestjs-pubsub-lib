@@ -8,8 +8,9 @@
     "url": "https://github.com/stubbies/nestjs-pubsub-lib.git"
   },
   "peerDependencies": {
-    "@google-cloud/pubsub": "^4.9.0",
-    "@nestjs/common": "11.0.7"
+    "@google-cloud/pubsub": "^4.9.0 || ^5.0.0",
+    "@nestjs/common": "^10.0.0 || ^11.0.0",
+    "@nestjs/core": "^10.0.0 || ^11.0.0"
   },
   "type": "commonjs",
   "main": "dist/index.js",
