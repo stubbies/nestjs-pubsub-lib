@@ -1,9 +1,8 @@
 import {
-  SubscriptionMetadata,
-  SubscriptionOptions,
   Message,
+  CreateSubscriptionOptions,
 } from "@google-cloud/pubsub";
-import { LoggerService } from "@nestjs/common";
+import { LoggerService, ModuleMetadata, Type } from "@nestjs/common";
 
 export type PubsubMessage = Message;
 
@@ -40,9 +39,34 @@ export interface PubsubCloudOptions extends PubsubOptionsBase {
 
 export type PubsubConfigOptions = PubsubEmulatorOptions | PubsubCloudOptions;
 
-export type PubsubListenerOptions = {
+export interface PubSubListenerOptions {
   topicName: string;
   subscriptionName: string;
-  subscriptionOptions?: SubscriptionOptions;
-  subscriptionMetadata?: SubscriptionMetadata;
-};
+  subscriptionOptions?: CreateSubscriptionOptions;
+}
+
+export interface PubsubOptionsFactory {
+  createPubsubOptions(): Promise<PubsubConfigOptions> | PubsubConfigOptions;
+}
+
+export interface PubsubModuleAsyncOptions extends Pick<ModuleMetadata, 'imports'> {
+  /**
+   * Use an existing provider that implements PubsubOptionsFactory.
+   */
+  useExisting?: Type<PubsubOptionsFactory>;
+
+  /**
+   * Instantiate a new provider that implements PubsubOptionsFactory.
+   */
+  useClass?: Type<PubsubOptionsFactory>;
+
+  /**
+   * A factory function that returns the PubsubConfigOptions.
+   */
+  useFactory?: (...args: any[]) => Promise<PubsubConfigOptions> | PubsubConfigOptions;
+
+  /**
+   * Dependencies to inject into the factory function.
+   */
+  inject?: any[];
+}
